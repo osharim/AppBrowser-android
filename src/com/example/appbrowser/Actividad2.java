@@ -1,3 +1,4 @@
+package com.example.appbrowser;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,9 +16,15 @@ public class Actividad2 extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.actividad2);
-		
 		webView1 = (WebView) findViewById(R.id.webView1);
-		bundle
+		/*
+		 En esta clase definimos una variable de tipo Bundle y la inicializamos llamando al método
+		  getExtras() de la clase Intent  (esto lo hacemos para recuperar el o los parámetros que envió 
+		 la otra actividad (Activity)):*/
+
+		Bundle bundle = getIntent().getExtras();
+		webView1.loadUrl("http://" + bundle.getString("direccion"));
+		
 		
 	}
 
